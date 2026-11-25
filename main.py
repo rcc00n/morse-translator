@@ -1,20 +1,12 @@
-def main():
-    a = input()
+"""Small Morse-code exercise; keep the original compact output convention."""
+from pathlib import Path
 
-    alphabet = open('morse_alpha.txt', 'r')
-    list1 = alphabet.readlines()
-    for element in range(len(list1)):
-        list1[element] = list1[element].split()
-    translated_line = ''
-    
-    for letter in a:
-        for element in range(len(list1)):
-            if letter.upper() ==  list1[element][0]:
-                translated_line = translated_line + list1[element][1]
-        if letter == ' ':
-            translated_line = translated_line + '/'
-        
-    print(translated_line)
-    
+def translate(text):
+    alphabet = dict(line.split() for line in Path(__file__).with_name('morse_alpha.txt').read_text(encoding='utf-8').splitlines() if line.strip())
+    return ''.join('/' if letter == ' ' else alphabet.get(letter.upper(), '') for letter in text)
+
+def main():
+    print(translate(input()))
+
 if __name__ == '__main__':
     main()
