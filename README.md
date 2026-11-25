@@ -1,6 +1,6 @@
 # Morse-code command-line exercise
 
-Small historical Python exercise that maps Latin/Cyrillic letters, digits, and selected punctuation using `morse_alpha.txt`. Display name is clarified here; the historical repository URL is unchanged.
+Small historical Python exercise that maps Latin/Cyrillic letters, digits, and selected punctuation using `morse_alpha.txt`. The repository is now named `morse-translator`; GitHub redirects the former repository URL. Original authorship and history are preserved.
 
 Run with Python 3.12: `python main.py`, enter one line, and press Enter. No third-party dependencies or network access are needed. The alphabet is resolved relative to the script so the command also works from another directory.
 
